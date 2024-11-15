@@ -1,0 +1,90 @@
+- You are an expert in TypeScript, Node.js, Next.js App Router, React, Shadcn UI, and Tailwind and Framer Motion.- Code Style and Structure - Write concise, technical TypeScript code with accurate examples. - Use functional and declarative programming patterns; avoid classes. - Prefer iteration and modularization over code duplication. - Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError). - Structure files: exported component, subcomponents, helpers, static content, types.- Naming Conventions - All components should go in src/components and be named like new-component.tsx - Use lowercase with dashes for directories (e.g., components/auth-wizard). - Favor named exports for components.- TypeScript Usage - Use TypeScript for all code; prefer interfaces over types. - Avoid enums; use maps instead. - Use functional components with TypeScript interfaces.- Syntax and Formatting - Use the "function" keyword for pure functions. - Avoid unnecessary curly braces in conditionals; use concise syntax for simple statements. - Use declarative JSX.- UI and Styling - Use Shadcn UI, and Tailwind for components and styling. - Implement responsive design with Tailwind CSS; use a mobile-first approach.- Performance Optimization - Minimize 'use client', 'useEffect', and 'setState'; favor React Server Components (RSC). - Wrap client components in Suspense with fallback. - Use dynamic loading for non-critical components. - Optimize images: use WebP format, include size data, implement lazy loading.- Key Conventions - Use 'nuqs' for URL search parameter state management. - Optimize Web Vitals (LCP, CLS, FID). - Limit 'use client':  - Favor server components and Next.js SSR.  - Use only for Web API access in small components.  - Avoid for data fetching or state management. - Follow Next.js docs for Data Fetching, Rendering, and Routing. - While creating placeholder images as a part of your seed data, use https://placekitten.com/ - Place both the /app and /components folders under a /src directory. This organization offers several benefits:  - It helps maintain a clean and organized project structure.  - It allows for easier navigation and management of components and pages.  - It adheres to common industry standards, making it easier for other developers to understand and contribute to the project.  - It provides a clear separation between application logic (in /src/app) and UI components (in /src/components), improving code readability and reusability.  - It simplifies the process of creating new pages and components, as you can easily find the corresponding files in the /src directory.  - It makes the project more modular and easier to scale as the application grows.  - It adheres to the principle of separation of concerns, where different aspects of the application are handled by different directories.## Components OrganizationWithin the /src/components folder, consider organizing components by type or feature:By Type: Group components like forms, buttons, layout elements, etc.By Feature: For larger applications, group components related to specific features or domainsFor example: /src/components├── /ui│ ├── /Button│ ├── /Modal│ └── /Card├── /forms│ ├── /TextField│ └── /Select└── /layout  ├── /Navbar  └── /Footer- Private Components: For components used only within specific pages, you can create a _components folder within the relevant /app subdirectory.- Shared Components: The /src/components folder should contain reusable components used across multiple pages or features.- Modular Approach: As your project grows, consider adopting a more modular structure, where each feature or domain has its own folder containing components, hooks, and utilities specific to that feature
+
+Product Requirements Document: Appointment Scheduling Software
+1. Overview
+The goal is to develop an online appointment scheduling platform similar to Calendly, allowing users to efficiently manage their time and provide a seamless scheduling experience for their clients.
+
+2. Objectives
+Primary Goal: Enable users to create, share, and manage meeting schedules with minimal back-and-forth communication.
+Target Audience: Professionals, businesses, freelancers, educators, and anyone needing appointment scheduling.
+3. Key Features
+3.1. User Features
+User Accounts and Profiles
+
+User registration and login (Email, Google, Microsoft).
+Personal dashboard to manage schedules.
+Profile customization: Photo, bio, available hours, timezone.
+Scheduling Options
+
+Define availability (daily, weekly, custom hours).
+Set meeting durations (15, 30, 60 minutes, custom).
+Buffer times between meetings.
+Limit daily meetings.
+Calendar Integration
+
+Sync with Google Calendar, Outlook, Apple Calendar.
+Auto-block unavailable slots from the synced calendar.
+Appointment Links
+
+Shareable appointment booking links (unique for each event).
+Customizable event names, descriptions, and locations (in-person/virtual).
+Automated Notifications
+
+Email and SMS reminders for both users and clients.
+Notifications for booking confirmations, reschedules, and cancellations.
+Time Zone Detection
+
+Automatically adjust available times based on client timezone.
+Group Scheduling
+
+Allow multiple participants to book the same slot (e.g., webinars, group sessions).
+Meeting Types
+
+One-on-one meetings.
+Round-robin scheduling for teams.
+Collective scheduling (team availability combined).
+Integrations
+
+Video conferencing: Zoom, Microsoft Teams, Google Meet.
+Payment gateways: Stripe, PayPal (for paid appointments).
+Analytics and Reporting
+
+Insights on booking history, no-show rates, and busiest times.
+3.2. Admin Features
+User Management
+
+Add, edit, or deactivate user accounts.
+Manage roles (e.g., Admin, Standard User).
+Platform Settings
+
+Enable/disable features (e.g., group scheduling).
+Manage default notification templates.
+Payment Plans
+
+Create subscription plans (Free, Pro, Enterprise).
+Manage trial periods and payment processing.
+4. Non-Functional Requirements
+Performance
+
+Handle up to 10,000 simultaneous users.
+Load time under 2 seconds for key actions.
+Security
+
+Data encryption (at rest and in transit).
+GDPR and HIPAA compliance.
+Scalability
+
+Ability to scale up as user base grows.
+Availability
+
+99.9% uptime guarantee.
+Usability
+
+Simple and intuitive UI/UX for users of all technical backgrounds.
+5. Technology Stack
+Frontend: React.js (or Next.js for SSR/SSG).
+Backend: Node.js with Express or FastAPI.
+Database: PostgreSQL (primary), Redis (caching).
+Cloud Services: AWS (or similar for hosting, S3 for storage).
+Authentication: OAuth 2.0 for third-party logins.
+Integrations: APIs for Calendar, Payment, and Video Conferencing.
