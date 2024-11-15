@@ -7,9 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "clean": "rm -rf .next out",
-    "prebuild": "npm run clean",
-    "postbuild": "next-sitemap"
+    "clean": "rm -rf .next out node_modules/.cache"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
